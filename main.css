@@ -1,0 +1,1097 @@
+  body {
+    height: 100%;
+    max-width: 100vw;
+    text-align: center;
+  }
+  
+  /* ===============================
+  Common styles
+  ==================================*/
+  
+  h1 {
+    color: #fff;
+    font: 700 36px 'Oswald', sans-serif;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0 10px;
+  }
+  
+  h2 {
+    color: #fff;
+    font: 400 20px 'Montserrat', sans-serif;
+    margin: 5px;
+  }
+  
+  p {
+    color: #fff;
+    font: 400 16px 'Montserrat', sans-serif;
+    margin: 5px;
+    line-height: 24px;
+    padding: 0 40px;
+  }
+  
+  /* ===============================
+  Navbar
+  ==================================*/
+  
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 60px;
+    z-index: 2;
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .navbar .navbar-left {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    flex-direction: row;
+    margin-left: 10px;
+  }
+  
+  .navbar-left h3 {
+    font: 700 24px 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    color: #000;
+    margin: 0;
+    line-height: 60px;
+  }
+  
+  .fa-compass {
+    margin-right: 8px;
+    font-size: 26px;
+    color: #000;
+  }
+  
+  .navbar .navbar-right {
+    margin-right: 25px;
+    line-height: 58px;
+  }
+  
+  .navbar-right input {
+    padding: 7px;
+    font: 400 12px 'Montserrat', sans-serif;
+    border-radius: 15px;
+    border: 1px solid #aaa;
+    box-shadow: none;
+    outline: 0;
+    background: #fff;
+    appearance: none;
+    padding-left: 30px;
+    width: 200px;
+  }
+  
+  .navbar-right i {
+    position: relative;
+    top: 0;
+    left: 28px;
+    font-size: 12px;
+    color: #888;
+  }
+  
+  /* ===============================
+  Footer nav
+  ==================================*/
+  
+  .footer-nav {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    margin: 0 auto;
+    text-align: center;
+    width: 270px;
+    height: 60px;
+    border-radius: 50px;
+    z-index: 4;
+    overflow: hidden;
+  }
+  
+  .footers {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    width: 270px;
+    height: 60px;
+    transition: all 200ms ease-in-out;
+  }
+  
+  .footer-link {
+    margin: 0 15px;
+    cursor: pointer;
+    font: 400 15px 'Oswald', sans-serif;
+    text-transform: uppercase;
+  }
+  
+  .footer-wrapper {
+    position: relative;
+    bottom: 0;
+    transition: all 200ms ease-in-out;
+  }
+  
+  .footer-primary {
+    background: #fff;
+    color: #000;
+    cursor: pointer;
+  }
+  
+  .footer-secondary {
+    background: tomato;
+    color: #000;
+  }
+  
+  .park-total-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 270px;
+    height: 60px;
+    border-radius: 50px;
+    z-index: 2;
+    transition: all 300ms ease-in-out;
+  }
+  
+  .park-total-container p {
+    font: 400 15px 'Oswald', sans-serif;
+    text-transform: uppercase;
+    color: #000;
+    padding: 0;
+  }
+  
+  .exit-stats {
+    position: absolute;
+    left: 205px;
+    font-size: 30px;
+    padding: 0 15px;
+    border-radius: 50%;
+    color: #fff;
+    background: #ff917e;
+  }
+  
+  .exit-stats i {
+    background: #fff;
+    color: tomato;
+  }
+  
+  .see-results {
+    padding: 5px 15px;
+    border-radius: 50px;
+    color: #fff;
+    font-size: 16px;
+  }
+  
+  .show-stats {
+    position: relative;
+    bottom: 60px;
+  }
+  
+  .tooltip {
+    position: fixed;
+    bottom: 84px;
+    left: 50%;
+    width: 250px;
+    transform: translate(-50%, 0);
+    z-index: 5;
+    background: #fff;
+    color: #000;
+    border-radius: 50px; 
+    padding: 15px 30px;  
+    font: 400 12px 'Montserrat', sans-serif;
+    line-height: 16px;
+    transition: all 200ms ease-in-out;
+    transition-delay: 200ms;
+    visibility: hidden;
+    opacity: 0;
+  }
+  
+  .tooltip:after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -10px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: #fff transparent transparent transparent;
+  }
+  
+  .show-tooltip {
+    animation: tooltipAnim 4s;
+    animation-iteration-count: 1;
+    animation-delay: 200ms;
+  }
+  
+  @keyframes tooltipAnim {
+    0%   { opacity: 0; visibility: hidden; bottom: 84px; }
+    5%   { opacity: 1; visibility: visible; bottom: 98px;}
+    95%  { opacity: 1; visibility: visible; bottom: 98px;}
+    100% { opacity: 0; visibility: hidden; bottom: 84px; }
+  }
+  
+  /* ===============================
+  Result modal
+  ==================================*/
+  
+  .results-modal-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 5;
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(1.1);
+    transition: all 200ms ease-in-out;
+  }
+  
+  .results-modal-content-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    height: 250px;
+    width: 325px;
+    border-radius: 5px;
+    background: #fff;
+  }
+  
+  .results-modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .results-modal i {
+    font-size: 24px;
+    background: #222;
+    color: #fff;
+    padding: 20px;
+    border-radius: 50%;
+  }
+  
+  .results-text {
+    font: 600 16px 'Oswald', sans-serif;
+    text-transform: uppercase;
+    color: #000;
+  }
+  
+  .results-modal p {
+    font: 400 14px 'Montserrat', sans-serif;
+    color: #000;
+    margin: 0;
+  }
+  
+  .results-modal-close {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    color: #ccc;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 10;
+  }
+  
+  .show-results-modal {
+    display: flex;
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+  }
+  
+  /* ===============================
+  Nat parks grid / ul 
+  ==================================*/
+  
+  .national-parks-list {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(21, 300px);
+    grid-column-gap: 3px;
+    grid-row-gap: 3px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-top: 60px;
+  }
+  
+  /* ===============================
+  Nat park panels / li
+  ==================================*/
+  
+  .nat-park {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .nat-park-background-container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  
+  .nat-park-background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+    transition: 0.2s all ease-in-out;
+    box-shadow: inset 0 0 100vw 100vw rgba(0, 0, 0, 0.3),
+      0 16px 8px -8px rgba(0, 0, 0, 0.4);
+    transform: scale(1);
+  }
+  
+  .nat-park-background-container:hover .nat-park-background {
+    box-shadow: inset 0 0 100vw 100vw rgba(0, 0, 0, 0.5),
+      0 16px 8px -8px rgba(0, 0, 0, 0.5);
+  }
+  
+  .nat-park__info {
+    z-index: 1;
+  }
+  
+  input.nat-park-checkbox {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border-radius: 0.25em;
+    transition: all 200ms ease-in-out;
+    display: none;
+    box-sizing: border-box;
+  }
+  
+  .show-checkboxes {
+    display: block !important;
+  }
+  
+  /* ===============================
+  Nat park modals
+  ==================================*/
+  
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    z-index: 5;
+    background: rgba(0, 0, 0, 0.6);
+    cursor: auto;
+    display: none;
+    transform: scaleY(0.01) scaleX(0);
+    animation: unfoldIn 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+  }
+  
+  @keyframes unfoldIn {
+    0% {
+      transform: scaleY(0.005) scaleX(0);
+    }
+    50% {
+      transform: scaleY(0.005) scaleX(1);
+    }
+    100% {
+      transform: scaleY(1) scaleX(1);
+    }
+  }
+  
+  .show-modal {
+    display: flex;
+  }
+  
+  .modal__contents {
+    position: relative;
+    top: 15px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    height: 350px;
+    width: 600px;
+    z-index: 6;
+    text-align: left;
+    padding: 0;
+    border-radius: 5px;
+    background: #fff;
+    opacity: 0;
+    transition: 1s 2s all ease-in-out;
+    animation: modalFadeIn 0.3s 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+  }
+  
+  @keyframes modalFadeIn {
+    0% {
+      opacity: 0;
+      top: 15px;
+    }
+    100% {
+      opacity: 1;
+      top: 0;
+    }
+  }
+  
+  .modal__contents-left {
+    position: relative;
+    left: 0;
+    top: 0;
+    height: 350px;
+    width: 250px;
+  }
+  
+  .modal__contents .modal__contents-left img {
+    position: relative;
+    height: 350px;
+    width: 250px;
+    margin: 0;
+    padding: 0;
+    object-fit: cover;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    box-sizing: border-box;
+    border: 5px solid #fff;
+    border-radius: 10px;
+  }
+  
+  .modal__contents-right {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: left;
+    flex-direction: column;
+    height: 100%;
+    margin-left: 10px;
+    padding: 0 15px 0 0;
+    background: transparent;
+    z-index: 5;
+  }
+  
+  .modal__contents-right h1 {
+    font-size: 20px;
+    max-width: 400px;
+    padding: 0;
+    margin: 5px;
+    color: #000;
+  }
+  
+  .modal__contents-right h2 {
+    font-size: 14px;
+    font-weight: 400;
+    color: #000;
+  }
+  
+  .modal__contents-right p {
+    padding: 0;
+    font-size: 12px;
+    line-height: 20px;
+    color: #000;
+  }
+  
+  .modal__contents-right .modal-link-btn {
+    position: relative;
+    top: 20px;
+    width: 55px;
+    display: inline-block;
+    margin: 0 4px;
+    padding: 10px 16px;
+    border-radius: 20px;
+    background: #ff6347;
+    color: #fff;
+    font-size: 10px;
+    text-transform: uppercase;
+    text-align: center;
+    text-decoration: none;
+    font-family: 'Oswald', sans-serif;
+  }
+  
+  .disable-scroll {
+    overflow: hidden;
+  }
+  
+  .modal__contents .closeBtn {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    color: #ccc;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 10;
+  }
+  
+  .modal__contents .closeBtn:after {
+    content: "\00d7";
+  }
+  
+  /* ===============================
+  About grid contents 
+  ==================================*/
+  
+  .about-contents {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+  }
+  
+  /* ===============================
+  Media queries
+  ==================================*/
+  
+  @media screen and (max-width: 800px) {
+    .modal__contents {
+      position: relative;
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+  
+    .modal__contents-left {
+      height: 40vh;
+      width: 100vw;
+      padding: 0 0 10px 0;
+    }
+  
+    .modal__contents .modal__contents-left img {
+      height: 40vh;
+      width: 100vw;
+      position: relative;
+      top: 0;
+      left: 0;
+      margin: 0 auto;
+      text-align: center;
+      object-fit: cover;
+    }
+  
+    .modal__contents .closeBtn {
+      color: #fff;
+    }
+  
+    .modal__contents .closeBtn {
+      position: absolute;
+      top: calc(100vh - 165px);
+      left: 15px;
+      color: #ccc;
+      font-size: 30px;
+      cursor: pointer;
+      z-index: 10;
+  
+      padding: 10px 30px;
+      max-width: 50px;
+      border-radius: 50px;
+      background: #ddd;
+      color: #555;
+      margin: 0 auto;
+      text-align: center;
+      font: 400 12px 'Oswald', sans-serif;
+      text-transform: uppercase;
+    }
+  
+    .modal__contents .closeBtn:after {
+      content: 'close';
+      height: 100%;
+      width: 100%;
+    }
+  
+    .modal__contents-right {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-direction: column;
+      margin: 0;
+      padding: 0 20px;
+    }
+  
+    .modal__contents-right h1 {
+      font-size: 20px;
+      max-width: 450px;
+      padding: 0;
+      margin: 5px;
+      text-align: center;
+    }
+  
+    .modal__contents-right h2 {
+      font-size: 14px;
+      font-weight: 400;
+    }
+  
+    .modal__contents-right p {
+      text-align: center;
+      font-size: 12px;
+    }
+  
+    .modal__contents-right .modal-link-btn {
+      position: relative;
+    }
+  
+    .nat-park-background-container:hover .nat-park-background {
+      box-shadow: inset 0 0 100vw 100vw rgba(0, 0, 0, 0.3),
+        0 16px 8px -8px rgba(0, 0, 0, 0.4);
+    }
+
+    .results-modal-content-wrapper {
+      height: 250px;
+      width: 300px;
+    }
+  
+    /* About grid contents *************************/
+    .about-contents {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      margin: 0 auto;
+    }
+  }
+  
+  @media screen and (min-width: 1450px) {
+    #national-parks-list {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(16, 400px);
+    }
+  }
+  
+  @media screen and (max-width: 900px) {
+    #national-parks-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(31, 300px);
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    #national-parks-list {
+      grid-template-rows: repeat(31, 250px);
+    }
+  
+    h1 {
+      font: 700 24px 'Oswald', sans-serif;
+    }
+  
+    h2 {
+      font: 400 16px 'Montserrat', sans-serif;
+    }
+  
+    .navbar h3 {
+      font: 700 20px 'ontserrat', sans-serif;
+      line-height: 60px;
+    }
+  
+    p {
+      font: 400 14px 'Montserrat', sans-serif;
+    }
+  
+    .navbar-right input {
+      max-width: 140px;
+    }
+  }
+  
+  /* National parks background data ----------------*/
+  
+  .acadia .nat-park-background {
+    background: url('images/acadia.jpeg');
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .american-samoa .nat-park-background {
+    background: url('images/americansamoa.jpeg');
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .arches .nat-park-background {
+    background: url('images/arches.jpeg');
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .badlands .nat-park-background {
+    background: url('images/badlands.jpeg');
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .big-bend .nat-park-background {
+    background: url('images/bigbend.jpeg');
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .biscayne .nat-park-background {
+    background: url('images/biscayne.jpeg');
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .black-canyon .nat-park-background {
+    background: url('images/blackcanyon.jpeg');
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .bryce-canyon .nat-park-background {
+    background: url('images/brycecanyon.jpeg');
+    background-position: 50% 0;
+    background-size: cover;
+  }
+  
+  .canyonlands .nat-park-background {
+    background: url('images/canyonlands.jpeg');
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .capitol-reef .nat-park-background {
+    background: url('images/capitolreef.jpeg');
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .carlsbad-caverns .nat-park-background {
+    background: url('images/carlsbad.jpg');
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .channel-islands .nat-park-background {
+    background: url('images/channelislands.jpeg');
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .congaree .nat-park-background {
+    background: url('images/congaree.jpeg');
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .crater-lake .nat-park-background {
+    background: url('images/craterlake.jpeg');
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .cuyahoga-valley .nat-park-background {
+    background: url('images/cuyahogavalley.jpg');
+    background-position: 50% 10%;
+    background-size: cover;
+  }
+  
+  .death-valley .nat-park-background {
+    background: url('images/deathvalley.jpeg');
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .denali .nat-park-background {
+    background: url('images/denali.jpeg');
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .dry-tortugas .nat-park-background {
+    background: url('images/drytortugas.jpeg');
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .everglades .nat-park-background {
+    background: url('images/everglades.jpeg');
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .gates-of-the-arctic .nat-park-background {
+    background: url('images/gatesofthearctic.jpeg');
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .gateway-arch .nat-park-background {
+    background: url('images/gatewayarch.jpeg');
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .glacier .nat-park-background {
+    background: url('images/glacier.jpeg');
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .glacier-bay .nat-park-background {
+    background: url('images/glacierbay.jpeg');
+    background-position: 50% 0;
+    background-size: cover;
+  }
+  
+  .grand-canyon .nat-park-background {
+    background: url('images/grandcanyon.jpeg');
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .grand-teton .nat-park-background {
+    background: url('images/grandteton.jpeg');
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .great-basin .nat-park-background {
+    background: url('images/greatbasin.jpeg');
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .great-sand-dunes .nat-park-background {
+    background: url('images/greatsanddunes.jpeg');
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .great-smoky-mountains .nat-park-background {
+    background: url('images/greatsmokymountains.jpeg');
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .guadalupe-mountains .nat-park-background {
+    background: url('images/guadalupe.jpeg');
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .haleakala .nat-park-background {
+    background: url('images/haleakala.jpeg');
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .hawaii-volcanoes .nat-park-background {
+    background: url('images/hawaiivolcanoes.jpeg');
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .hot-springs .nat-park-background {
+    background: url('images/hotsprings.jpg');
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .indiana-dunes .nat-park-background {
+    background: url('images/indianadunes.jpg');
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .isle-royale .nat-park-background {
+    background: url('images/isleroyale.jpeg');
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .joshua-tree .nat-park-background {
+    background: url('images/joshuatree.jpeg');
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .katmai .nat-park-background {
+    background: url('images/katmai.jpeg');
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .kenai-fjords .nat-park-background {
+    background: url('images/kenaifjords.jpeg');
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .kings-canyon .nat-park-background {
+    background: url('images/kingscanyon.jpeg');
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .kobuk-valley .nat-park-background {
+    background: url('images/kobukvalley.jpg');
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .lake-clark .nat-park-background {
+    background: url('images/lakeclark.jpeg');
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .lassen-volcanic .nat-park-background {
+    background: url('images/lassenvolcanic.jpeg');
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .mammoth-cave .nat-park-background {
+    background: url('images/mammothcave.jpg');
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .mesa-verde .nat-park-background {
+    background: url('images/mesaverde.jpeg');
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .mount-rainier .nat-park-background {
+    background: url('images/mountrainier.jpeg');
+    background-position: 50% 20%;
+    background-size: cover;
+  }
+  
+  .north-cascades .nat-park-background {
+    background: url('images/northcascades.jpeg');
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .olympic .nat-park-background {
+    background: url('images/olympic.jpeg');
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .petrified-forest .nat-park-background {
+    background: url('images/petrifiedforest.jpg');
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .pinnacles .nat-park-background {
+    background: url('images/pinnacles.jpeg');
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .redwood .nat-park-background {
+    background: url('images/redwood.jpeg');
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .rocky-mountain .nat-park-background {
+    background: url('images/rockymountain.jpeg');
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .saguaro .nat-park-background {
+    background: url('images/saguaro.jpeg');
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .sequoia .nat-park-background {
+    background: url('images/sequoia.jpeg');
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .shenandoah .nat-park-background {
+    background: url('images/shenandoah.jpeg');
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .theodore-roosevelt .nat-park-background {
+    background: url('images/theodoreroosevelt.jpeg');
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .virgin-islands .nat-park-background {
+    background: url('images/virginislands.jpeg');
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .voyageurs .nat-park-background {
+    background: url('images/voyageurs.jpeg');
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .wind-cave .nat-park-background {
+    background: url('images/windcave.jpeg');
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .wrangell-st-elias .nat-park-background {
+    background: url('images/wrangellstelias.jpeg');
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .yellowstone .nat-park-background {
+    background: url('images/yellowstone.jpeg');
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .yosemite .nat-park-background {
+    background: url('images/yosemite.jpeg');
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .zion .nat-park-background {
+    background: url('images/zion.jpeg');
+    background-position: center;
+    background-size: cover;
+  }
+  
