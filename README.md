@@ -2,7 +2,7 @@
 
 https://natparks.us
 
-This is a website project I designed and coded to showcase all US National Parks with info and useful links as well as an interactive tracker to see how many parks you've been to. Screenshots below.
+This is a website project I designed and coded to showcase all US National Parks with info and useful links as well as an interactive tracker to see how many parks the user's been to. Screenshots below.
 
 <img width="1253" alt="natparks" src="https://user-images.githubusercontent.com/17466307/121104933-e6335b00-c7b7-11eb-8ca1-bc68068011b2.png">
 
